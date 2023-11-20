@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Alumni+Sans+Inline+One&family=Audiowide&family=Exo+2&family=Martel:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- ICONE SOCIAL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="style_game_site.css">
+    <title>GameHouse</title>
+    <style>
+        /* INIZIO MEDIASCREEN */
+
+        @media only screen and (max-width:600px) {
+            body {
+                background-color: #000000eb;
+                width: fit-content;
+                color: #f2f2f2;
+                font-family: 'Audiowide', serif;
+                text-align: center;
+
+            }
+
+            h1 {
+                font-size: 3em;
+            }
+
+            header {
+                display: flex;
+                justify-content: center;
+            }
+
+            .topnav {
+                width: fit-content;
+                transform: scale(0.6);
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .topnav a.active {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            h3 {
+                font-size: 2em;
+                text-align: center;
+            }
+
+            h4 {
+                text-align: center;
+                text-transform: uppercase;
+                text-decoration: underline;
+                color: white;
+                text-shadow: white 0px 8px 20px;
+            }
+
+            .imgnotizie {
+                width: 20em;
+                border: 3px outset rgba(255, 255, 255, 0.838);
+                border-radius: 30px;
+            }
+
+            p {
+                font-size: 0.4em;
+                margin-bottom: 30px;
+                font-family: 'Poppins';
+            }
+
+            /* -----------FOOTER---------- */
+
+            #textform {
+                color: rgba(255, 255, 255, 0.648);
+                font-size: 0.7em;
+                width: 100%;
+                text-align: center;
+            }
+
+            input[type="text"] {
+                opacity: 0.7;
+                font-size: 60%;
+                width: 60%;
+                border: 3px solid #33383a3c;
+                padding: 10px;
+                margin-top: 5px;
+                border-radius: 20px;
+            }
+
+            input[type="email"] {
+                opacity: 0.7;
+                font-size: 60%;
+                width: 60%;
+                border: 3px solid #33383a3c;
+                padding: 10px;
+                margin-top: 5px;
+                border-radius: 20px;
+            }
+
+            input[type="submit"] {
+                background-color: rgba(232, 232, 228, 0.768);
+                opacity: 0.9;
+                font-size: 90%;
+                width: 30%;
+                border: 3px solid #0000003c;
+                padding: auto;
+                margin-top: 5px;
+                border-radius: 20px;
+                margin-top: 20px;
+
+            }
+
+            input[type="submit"]:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+                border-color: rgb(98, 14, 14);
+                opacity: 0.4;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.581);
+            }
+
+
+            .fa {
+                padding: 20px;
+                font-size: 2em;
+                width: 10%;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+            }
+
+            .fa:hover {
+                opacity: 0.7;
+            }
+
+            .fa-pinterest {
+                /* background: #ffffff; */
+                color: rgb(204, 24, 24);
+
+            }
+
+            .fa-instagram {
+                /* background: #125688; */
+                color: #833AB4;
+            }
+
+            .fa-linkedin {
+                /* background: #007bb5; */
+                color: #007bb5;
+            }
+
+
+            #social {
+                margin-top: 30px;
+            }
+
+            #finaltext {
+                font-size: 0.4em;
+                text-decoration: underline;
+                opacity: 0.6;
+            }
+
+        }
+
+        /* SCRIPT */
+        select {
+            background-color: white;
+            color: black;
+            padding: 8px;
+            font-family: 'Poppins';
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        option[value=] {
+            background-color: white;
+        }
+
+        button {
+            background-color: transparent;
+            color: white;
+            padding: 8px;
+            font-family: 'Poppins';
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+
+        /* FINE MEDIA SCREEN <600px */
+
+
+        /* INIZIO MEDIA SCREEN <600px */
+
+        @media only screen and (min-width:600px) {
+
+            body {
+                background-color: #000000eb;
+                width: fit-content;
+                color: #f2f2f2;
+                font-family: 'Audiowide', serif;
+                text-align: center;
+
+            }
+
+            h1 {
+                font-size: 5em;
+            }
+
+            h3 {
+                font-size: 3em;
+            }
+
+            h4 {
+                font-size: 2.5em;
+                text-align: center;
+                text-transform: uppercase;
+                text-decoration: underline;
+                color: white;
+                text-shadow: white 0px 8px 25px;
+            }
+
+            .topnav {
+                background-color: #333;
+                overflow: hidden;
+                z-index: 1000;
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* Style the links inside the navigation bar */
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            /* Change the color of links on hover */
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            /* Add a color to the active/current link */
+            .topnav a.active {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            #maindiv {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 4%;
+                /* border: 3px solid white; */
+                display: flex;
+                flex-direction: row;
+            }
+
+            .boxgame {
+                /* border: 5px solid white; */
+                /* border-radius: 35px; */
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+
+            }
+
+            .textgame {
+                width: 65%;
+            }
+
+            .imgnotizie {
+                width: 90%;
+                border-radius: 5px;
+            }
+
+
+            /* ------FOOTER------ */
+
+            #textform {
+                color: rgba(255, 255, 255, 0.648);
+                font-size: 1em;
+                width: 100%;
+                text-align: center;
+            }
+
+            input[type="text"] {
+                opacity: 0.7;
+                font-size: 100%;
+                width: 20%;
+                border: 3px solid #33383a3c;
+                padding: 10px;
+                margin-top: 5px;
+                border-radius: 20px;
+                text-align: center;
+            }
+
+            input[type="email"] {
+                opacity: 0.7;
+                font-size: 100%;
+                width: 20%;
+                border: 3px solid #33383a3c;
+                padding: 10px;
+                margin-top: 5px;
+                border-radius: 20px;
+                text-align: center;
+
+            }
+
+            input[type="submit"] {
+                background-color: rgba(232, 232, 228, 0.768);
+                opacity: 0.9;
+                font-size: 80%;
+                width: 8%;
+                border: 3px solid #0000003c;
+                padding: auto;
+                margin-top: 5px;
+                border-radius: 20px;
+                margin-top: 20px;
+
+            }
+
+            input[type="submit"]:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+                border-color: rgb(98, 14, 14);
+                opacity: 0.4;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.581);
+            }
+
+
+            .fa {
+                border-radius: 50%;
+                padding: 20px;
+                font-size: 60px;
+                width: 10%;
+                text-align: center;
+                text-decoration: none;
+                margin-top: 60px;
+            }
+
+            .fa:hover {
+                opacity: 0.7;
+            }
+
+            .fa-pinterest {
+                /* background: #ffffff; */
+                color: rgb(204, 24, 24);
+
+            }
+
+            .fa-instagram {
+                /* background: #125688; */
+                color: #833AB4;
+            }
+
+            .fa-linkedin {
+                /* background: #007bb5; */
+                color: #007bb5;
+            }
+
+            #finaltext {
+                text-decoration: underline;
+                opacity: 0.6;
+            }
+
+            /* SCRIPT */
+
+            .choosegm {
+                border: 2px solid white;
+                width: 10%;
+                border-radius: 15px;
+                position: absolute;
+                right: 400px;
+                top: 400px;
+            }
+
+            .choosegp {
+                border: 2px solid white;
+                width: 11%;
+                border-radius: 15px;
+                position: absolute;
+                right: 390px;
+                top: 520px;
+            }
+
+            #divTOT {
+                border: 2px solid white;
+                background-color: white;
+                color: black;
+                width: 11%;
+                border-radius: 15px;
+                /* position: absolute; */
+                margin-top: 1%;
+                margin-left: auto;
+                margin-right: auto;
+                right: 390px;
+                top: 520px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>GameHouse</h1>
+
+    <header> <!--NAVBAR-->
+        <div class="topnav">
+            <a class="active" href="url_home">Home</a>
+            <a href="url_news">News</a>
+            <a href="url_contatti">Contatti</a>
+            <a href="url_info">Info</a>
+        </div>
+        <!-- STOP NAVBAR -->
+    </header>
+
+    <h3>Notizie principali</h3>
+
+
+    <form action="">
+        <label for="game">Choose a game:</label>
+        <select name="game" id="game">
+            <option value="nessun gioco *0€">nessun gioco</option>
+            <option value="GTAVI*70€">GTA VI</option>
+            <option value="battlefield 2024 *50€">Battlefield 2024</option>
+            <option value="callofduty *35€">CALL OF DUTY BLACK OPS III</option>
+            <option value="Minecraft *20€">Minecraft</option>
+        </select>
+        <br><br>
+    </form>
+
+    <form action="">
+        <label for="extention">Choose a gamepass:</label>
+        <select name="extension" id="extension">
+            <option value="nessun gamepass*0€">nessun gamepass</option>
+            <option value="gamepass Standard*50€">3 month</option>
+            <option value="gamepass Premium*65€">6 month</option>
+            <option value="gamepass Gold*100€">9 month</option>
+            <option value="gamepass Platinum*150€">12 month</option>
+        </select>
+        <br><br>
+    </form>
+
+    <button onclick="myFunction()">Conferma</button>
+
+    <div class="choosegm">
+        <p id="demo"></p>
+        <p id="demo1"></p>
+    </div>
+    <div class="choosegp">
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+    </div>
+    <div id="divTOT">
+        <p id="demoTOT"></p>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("game").value;
+            const prezzo = x.split("*");
+
+            document.getElementById("demo").innerHTML = "Hai scelto " + prezzo[0];
+            document.getElementById("demo1").innerHTML = "il prezzo è " + prezzo[1];
+            // SELECT2
+
+            var y = document.getElementById("extension").value;
+            const prezzo2 = y.split("*");
+
+            document.getElementById("demo2").innerHTML = "Hai scelto " + prezzo2[0];
+            document.getElementById("demo3").innerHTML = "il prezzo è " + prezzo2[1];
+
+            var somma = parseInt(prezzo[1]) + parseInt(prezzo2[1])
+            document.getElementById("demoTOT").innerHTML = "Il totale è " + parseInt(somma) + "€";
+
+        }
+
+
+    </script>
+
+
+    <!-- ---STOP SCRIPT -->
+
+    <div id="maindiv">
+        <div>
+            <div class="boxgame">
+                <h4>Gta VI</h4>
+                <img class="imgnotizie" src="images_exercise/game site/gtaVI.png" alt="">
+                <p class="textgame">GTA 6 è sicuramente uno dei videogiochi più attesi e chiacchierati del momento. Le
+                    domande che gravitano
+                    attorno al sesto capitolo della saga di Grand Theft Auto sono molteplici e anche se Rockstar Games
+                    ha
+                    dichiarato di essere al lavoro sul prossimo capitolo della saga, gli appassionati hanno ancora molti
+                    dubbi.
+                    Nell'attesa di ricevere maggiori dettagli da parte di Rockstar abbiamo pensato di racchiudere in
+                    questo
+                    articolo tutto quel che si sta vociferando su GTA 6. A mancare all'appello ci sono ancora moltissimi
+                    dettagli importanti, come per esempio una data di lancio, l'ambientazione che verrà proposta, il
+                    personaggio
+                    che interpreteremo o le nuove meccaniche di gameplay che verranno inserite nel sesto capitolo.</p>
+            </div>
+
+            <div class="boxgame">
+                <h4>Call Of Duty BLACK OPS III</h4>
+                <img class="imgnotizie" src="images_exercise/game site/Call_of_Duty_BO3.jpg" alt="">
+                <p class="textgame">Activision ha annunciato che Treyarch si sarebbe occupata dello sviluppo del nuovo
+                    Call of Duty a
+                    febbraio. A
+                    quel punto sono partite le scommesse: che gioco sarebbe stato? Forse World at War 2? <br><br>
+
+                    A inizio aprile è partita la campagna "teaser", con alcuni precisi riferimenti grafici che hanno
+                    trovato
+                    spazio in alcune pubblicità inserite all'interno di Black Ops II, destinate a portare a un account
+                    di
+                    Call
+                    of Duty su Snapchat. Poco dopo è stata la volta di un video in cui si annunciava... l'annuncio del
+                    nuovo
+                    COD, un video con un messaggio: "Back in Black". Da lì è stata questione di pochissimo prima che
+                    l'etichetta
+                    americana confermasse il prossimo arrivo di Black Ops III.</p>
+            </div>
+            <div class="boxgame">
+                <h4>the last of us</h4>
+                <img class="imgnotizie" src="images_exercise/game site/The-Last-Of-Us.jpg" alt="">
+                <p class="textgame">GTA 6 è sicuramente uno dei videogiochi più attesi e chiacchierati del momento. Le
+                    domande
+                    che gravitano
+                    attorno al sesto capitolo della saga di Grand Theft Auto sono molteplici e anche se Rockstar Games
+                    ha
+                    dichiarato di essere al lavoro sul prossimo capitolo della saga, gli appassionati hanno ancora molti
+                    dubbi.
+                    Nell'attesa di ricevere maggiori dettagli da parte di Rockstar abbiamo pensato di racchiudere in
+                    questo
+                    articolo tutto quel che si sta vociferando su GTA 6. A mancare all'appello ci sono ancora moltissimi
+                    dettagli importanti, come per esempio una data di lancio, l'ambientazione che verrà proposta, il
+                    personaggio
+                    che interpreteremo o le nuove meccaniche di gameplay che verranno inserite nel sesto capitolo.</p>
+            </div>
+        </div>
+        <div>
+            <div class="boxgame">
+                <h4>battlefield 2042</h4>
+                <img class="imgnotizie" src="images_exercise/game site/battlefield2042.jpeg" alt="">
+                <p class="textgame">GTA 6 è sicuramente uno dei videogiochi più attesi e chiacchierati del momento. Le
+                    domande che
+                    gravitano
+                    attorno al sesto capitolo della saga di Grand Theft Auto sono molteplici e anche se Rockstar Games
+                    ha
+                    dichiarato di essere al lavoro sul prossimo capitolo della saga, gli appassionati hanno ancora molti
+                    dubbi.
+                    Nell'attesa di ricevere maggiori dettagli da parte di Rockstar abbiamo pensato di racchiudere in
+                    questo
+                    articolo tutto quel che si sta vociferando su GTA 6. A mancare all'appello ci sono ancora moltissimi
+                    dettagli importanti, come per esempio una data di lancio, l'ambientazione che verrà proposta, il
+                    personaggio
+                    che interpreteremo o le nuove meccaniche di gameplay che verranno inserite nel sesto capitolo.</p>
+            </div>
+
+            <div class="boxgame">
+                <h4>minecraft</h4>
+                <img class="imgnotizie" src="images_exercise/game site/minecraft.jpeg" alt="minecraft">
+                <p class="textgame">Il gioco genitore-figlio per eccellenza ha occupato i nostri cuori per più di
+                    un'era. È iniziato come
+                    un
+                    gioco indie ed è diventato un bestseller mondiale. Più di 238 milioni di copie vendute entro la fine
+                    del
+                    2021, Riguarda videogioco più venduto di tutti i tempi: anticipa Grand Theft Auto V, con 150 milioni
+                    di
+                    copie, e persino lo stesso Tetris, con 100 milioni di vendite. <br>
+                    L'universo sandbox Minecraft offre una vasta gamma di possibilità a tutti i tipi di pubblico.
+                    Permette
+                    di
+                    sviluppare il creatività sia con la costruzione basata su materiali infiniti con il Modalità
+                    creativa,
+                    oltre
+                    a lasciare che il giocatore lo capisca in a Modalità sopravvivenza finire con poche risorse.
+
+                    Proprio come un 'Ditto', questo videogioco diventa quello che vuoi. Inoltre, la sua vasta gamma di
+                    mods
+                    disponibile su Internet ti rende possibile personalizzare il tema del gioco a proprio piacimento. e,
+                    come in
+                    The Sims, Minecraft non ha obiettivi, ma piuttosto ti dà la libertà di mettere i tuoi obiettivi in
+                    questo
+                    universo dalle infinite possibilità.</p>
+            </div>
+
+            <div class="boxgame">
+                <h4>fc24</h4>
+                <img class="imgnotizie" src="images_exercise/game site/Fc2024.jpg" alt="fc 2024">
+                <p class="textgame">La separazione è stata una questione di soldi. Secondo il New York Times, la Fifa
+                    voleva raddoppiare
+                    la
+                    licenza da 150 milioni di dollari che consentiva a Electronic Arts di continuare a usare il suo
+                    nome.
+                    EA,
+                    nel frattempo, aveva iniziato a farsi domande su cosa effettivamente otteneva in cambio di quel
+                    denaro:
+                    "In
+                    sostanza, ciò che riceviamo dalla Fifa in un anno in cui non ci sono i mondiali sono le quattro
+                    lettere
+                    sulla parte frontale della confezione, in un mondo in cui la maggior parte delle persone non la vede
+                    nemmeno
+                    più, perché acquista il gioco in formato digitale", avrebbe detto secondo alcune indiscrezioni
+                    Andrew
+                    Wilson, amministratore delegato di EA, parlando con i dipendenti dell'azienda. <br>
+                    Per anni il franchise calcistico di maggior successo al mondo ha avuto una concorrenza limitata, ma
+                    quando
+                    la Fifa ha minacciato di lanciare un titolo rivale, il futuro del gioco si è improvvisamente fatto
+                    incerto.
+                    EA avrebbe perso i diritti di licenza e sarebbe stata costretta a includere nel suo titolo squadre e
+                    giocatori generici in stile Pro Evo, con Erwin Holland dei Manchester Blues a fare gol in Prima
+                    Divisione al
+                    posto di Erling Haaland del Manchester City in Premier League? La Fifa sarebbe davvero riuscita a
+                    creare
+                    il
+                    suo gioco?</p>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+
+    <footer>
+
+        <h3>Iscriviti alla newsletter</h3>
+        <p id="textform">Iscriviti alla nostra newsletter per non perderti nessuna notizia sul mondo dei videogames
+        </p>
+        <div id="contactbox">
+            <div>
+                <form action="">
+                    <input type="text" placeholder="Nome" id="nome">
+                    <label for="nome"></label>
+            </div>
+            <div>
+                <input type="text" placeholder="Cognome" id="cognome">
+                <label for="cognome"></label>
+            </div>
+            <div>
+                <input type="email" placeholder="e-mail" id="email" required>
+                <label for="email"></label>
+            </div>
+            <div>
+                <input type="text" placeholder="Telefono" id="telefono">
+                <label for="telefono"></label>
+            </div>
+            <div>
+                <input type="submit" id="button" value="invia">
+            </div>
+        </div>
+        </form>
+
+
+        <div id="social">
+            <a href="https://www.instagram.com/guglielmomarra_/" target="blank" class="fa fa-instagram"></a>
+            <a href="https://www.pinterest.it/gulymarra/" target="blank" class="fa fa-pinterest"></a>
+            <a href="https://www.linkedin.com/in/guglielmo-marra-5515a227b/" target="blank" class="fa fa-linkedin"></a>
+        </div>
+
+        <p id="finaltext">By Guglielmo Marra</p>
+    </footer>
+</body>
+
+</html>
